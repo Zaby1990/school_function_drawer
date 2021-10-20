@@ -7,7 +7,7 @@ import sys
 import os
 
 
-class Plot:
+class LinearPlot:
     counter = 0
 
     def __init__(self, m=None, n=None, x1=None, y1=None, x2=None, y2=None):
@@ -45,7 +45,7 @@ class Plot:
         self.calculateWithEq()
 
     def addLabel(self):
-        self.label = f'f{self.counter}(x) = {self.m:1.2f}x + {self.n} '
+        self.label = f'f{self.counter}(x) = {self.m:1.3f}x + {self.n:1.3f} '
 
     # def addLabel(self):
         # pass
@@ -142,7 +142,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.txtEqN.setText("")
             return
 
-        self.y.append(Plot(m=m, n=n))
+        self.y.append(LinearPlot(m=m, n=n))
 
     def addLinPoi(self):
         x1 = self.txtLinPoiX1.text()
@@ -171,7 +171,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.txtLinPoiY2.setText("")
             return
 
-        self.y.append(Plot(x1=x1, x2=x2, y1=y1, y2=y2))
+        self.y.append(LinearPlot(x1=x1, x2=x2, y1=y1, y2=y2))
 
 
 
