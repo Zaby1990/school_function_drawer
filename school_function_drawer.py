@@ -28,25 +28,27 @@ class Plot:
         self.color = color
 
     def calculateY(self):
-        if not(self.m is None):
+        if not((self.m is None) & (self.n is None)):
             self.calculateWithEq()
-            self.addLabelEq()
 
-        if not(self.x1 is None):
+        if not((self.x1 is None) & (self.x2 is None) & (self.y1 is None) & (self.y2 is None)):
             self.calculateWithPoints()
-            self.addLabelPoi()
 
+        self.addLabel()
     def calculateWithEq(self):
         self.y = self.m * self.x + self.n
 
     def calculateWithPoints(self):
-        pass
+        self.m = (self.y2-self.y1)/(self.x2-self.x1)
+        self.n = self.y1 - self.m * self.x1
 
-    def addLabelEq(self):
-        self.label = f'f{self.counter}(x) = {self.m}x + {self.n} '
+        self.calculateWithEq()
 
-    def addLabelPoi(self):
-        pass
+    def addLabel(self):
+        self.label = f'f{self.counter}(x) = {self.m:1.2f}x + {self.n} '
+
+    # def addLabel(self):
+        # pass
 
 # GUI
 class Ui_MainWindow(QtWidgets.QMainWindow):
@@ -143,7 +145,34 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.y.append(Plot(m=m, n=n))
 
     def addLinPoi(self):
-        pass
+        x1 = self.txtLinPoiX1.text()
+        y1 = self.txtLinPoiY1.text()
+        x2 = self.txtLinPoiX2.text()
+        y2 = self.txtLinPoiY2.text()
+
+        try:
+            x1 = float(x1.replace(',','.'))
+        except:
+            self.txtLinPoiX1.setText("")
+            return
+        try:
+            y1 = float(y1.replace(',','.'))
+        except:
+            self.txtLinPoiY1.setText("")
+            return
+        try:
+            x2 = float(x2.replace(',','.'))
+        except:
+            self.txtLinPoiX2.setText("")
+            return
+        try:
+            y2 = float(y2.replace(',','.'))
+        except:
+            self.txtLinPoiY2.setText("")
+            return
+
+        self.y.append(Plot(x1=x1, x2=x2, y1=y1, y2=y2))
+
 
 
 if __name__ == '__main__':                                      # for starting
