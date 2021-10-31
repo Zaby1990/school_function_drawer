@@ -106,6 +106,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ax.spines['bottom'].set_position(('data',0))
         self.ax.xaxis.set_ticks_position('bottom')
         self.ax.yaxis.set_ticks_position('left')
+        self.ax.set_xticks(range(-5,6))
+        self.ax.set_yticks(range(-5,6))
+        self.ax.grid(True)
 
 
     def plot(self):
@@ -119,7 +122,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             print(i.x,i.y,i.color)
             self.ax.plot(i.x, i.y, color=i.color,label=i.label)
 
-        plt.legend(frameon=True)
+        if self.legend_activated.isChecked():
+            plt.legend(frameon=True)
         plt.show()
 
     def defineColors(self):
