@@ -1,0 +1,1 @@
+python ./school_function_drawer.py
