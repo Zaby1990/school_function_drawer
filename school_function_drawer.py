@@ -96,7 +96,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def refreshAxes(self):
         # set plot settings
-        self.fig, self.ax = plt.subplots()
+        self.fig, self.ax = plt.subplots(figsize=(16,9))
+
         self.ax.set_xlim([-5, 5])
         self.ax.set_ylim([-5, 5])
 
@@ -108,6 +109,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ax.yaxis.set_ticks_position('left')
         self.ax.set_xticks(range(-5,6))
         self.ax.set_yticks(range(-5,6))
+        # self.ax.tick_params(axis='x',fontsize=12)
+        plt.xticks(fontsize=12)
+        plt.yticks(fontsize=12)
         self.ax.grid(True)
 
 
@@ -119,11 +123,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.defineColors()
         for i in self.y:
-            print(i.x,i.y,i.color)
+            # print(i.x,i.y,i.color)
             self.ax.plot(i.x, i.y, color=i.color,label=i.label)
 
         if self.legend_activated.isChecked():
-            plt.legend(frameon=True)
+            plt.legend(frameon=True, fontsize=12)
+            
         plt.show()
 
     def defineColors(self):
