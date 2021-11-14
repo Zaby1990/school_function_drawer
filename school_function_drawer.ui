@@ -328,6 +328,40 @@
       <string>x²</string>
      </attribute>
     </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Settings</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>431</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Plot</string>
+      </property>
+      <widget class="QCheckBox" name="legend_activated">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>70</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>legend</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="butPlot">
     <property name="geometry">
