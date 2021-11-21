@@ -109,7 +109,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ax.yaxis.set_ticks_position('left')
         self.ax.set_xticks(range(-5,6))
         self.ax.set_yticks(range(-5,6))
-        # self.ax.tick_params(axis='x',fontsize=12)
         plt.xticks(fontsize=12)
         plt.yticks(fontsize=12)
         self.ax.grid(True)
