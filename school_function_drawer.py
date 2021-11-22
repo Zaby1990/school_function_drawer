@@ -5,6 +5,8 @@ import numpy as np
 from PyQt5 import QtWidgets, uic, QtGui
 import sys
 import os
+# import own Files
+from QuadPlot import *
 
 
 class LinearPlot:
@@ -82,6 +84,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.butAddLinPoi.clicked.connect(self.addLinPoi)
         self.butPlot.clicked.connect(self.plot)
         self.butRefresh.clicked.connect(self.refreshPlot)
+        self.butAddQuadPoi.clicked.connect(self.addQuadPoi)
+        self.butAddQuadEq_1.clicked.connect(self.addQuadEq_1)
+        self.butAddQuadEq_2.clicked.connect(self.addQuadEq_2)
 
         # menubar
         # self.action_exit.triggered.connect(lambda: self.close())
@@ -181,7 +186,94 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.y.append(LinearPlot(x1=x1, x2=x2, y1=y1, y2=y2))
 
+    def addQuadEq_1(self):
+        a = self.txtEqA.text()
+        try:
+            a = float(a.replace(',','.'))
+        except:
+            self.txtEqA.setText("")
+            return
 
+        b = self.txtEqB.text()
+        try:
+            b = float(b.replace(',','.'))
+        except:
+            self.txtEqB.setText("")
+            return
+
+        c = self.txtEqC.text()
+        try:
+            c = float(c.replace(',','.'))
+        except:
+            self.txtEqC.setText("")
+            return
+
+        self.y.append(QuadPlot(a=a, b=b, c=c))
+
+    def addQuadEq_2(self):
+        d = self.txtEqD.text()
+        try:
+            d = float(d.replace(',','.'))
+        except:
+            self.txtEqD.setText("")
+            return
+
+        e = self.txtEqE.text()
+        try:
+            e = float(e.replace(',','.'))
+        except:
+            self.txtEqE.setText("")
+            return
+
+        f = self.txtEqF.text()
+        try:
+            f = float(f.replace(',','.'))
+        except:
+            self.txtEqF.setText("")
+            return
+
+        self.y.append(QuadPlot(d=d, e=e, f=f))
+
+    def addQuadPoi(self):
+        x1 = self.txtQuadPoiX1.text()
+        y1 = self.txtQuadPoiY1.text()
+        x2 = self.txtQuadPoiX2.text()
+        y2 = self.txtQuadPoiY2.text()
+        x3 = self.txtQuadPoiX3.text()
+        y3 = self.txtQuadPoiY3.text()
+        
+        try:
+            x1 = float(x1.replace(',','.'))
+        except:
+            self.txtQuadPoiX1.setText("")
+            return
+        try:
+            y1 = float(y1.replace(',','.'))
+        except:
+            self.txtQuadPoiY1.setText("")
+            return
+        try:
+            x2 = float(x2.replace(',','.'))
+        except:
+            self.txtQuadPoiX2.setText("")
+            return
+        try:
+            y2 = float(y2.replace(',','.'))
+        except:
+            self.txtQuadPoiY2.setText("")
+            return
+        try:
+            x3 = float(x3.replace(',','.'))
+        except:
+            self.txtQuadPoiX3.setText("")
+            return
+        try:
+            y3 = float(y3.replace(',','.'))
+        except:
+            self.txtQuadPoiY3.setText("")
+            return
+
+        self.y.append(QuadPlot(x1=x1, x2=x2, x3=x3, y1=y1, y2=y2, y3=y3))
 
 if __name__ == '__main__':                                      # for starting
 

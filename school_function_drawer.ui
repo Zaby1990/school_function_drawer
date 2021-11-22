@@ -339,7 +339,7 @@
       <property name="title">
        <string>equation</string>
       </property>
-      <widget class="QLineEdit" name="txtEqM_2">
+      <widget class="QLineEdit" name="txtEqA">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -349,7 +349,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtEqN_2">
+      <widget class="QLineEdit" name="txtEqB">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -419,7 +419,7 @@
         <string>y = ax² + bx + c</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="butAddLinEq_2">
+      <widget class="QPushButton" name="butAddQuadEq_1">
        <property name="geometry">
         <rect>
          <x>320</x>
@@ -432,7 +432,7 @@
         <string>Add</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtEqN_3">
+      <widget class="QLineEdit" name="txtEqC">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -476,7 +476,7 @@
       <property name="title">
        <string>equation - vertex form</string>
       </property>
-      <widget class="QLineEdit" name="txtEqM_4">
+      <widget class="QLineEdit" name="txtEqD">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -486,7 +486,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtEqN_6">
+      <widget class="QLineEdit" name="txtEqE">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -556,7 +556,7 @@
         <string>y = a ∙ (x +b)² + c</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="butAddLinEq_4">
+      <widget class="QPushButton" name="butAddQuadEq_2">
        <property name="geometry">
         <rect>
          <x>320</x>
@@ -569,7 +569,7 @@
         <string>Add</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtEqN_7">
+      <widget class="QLineEdit" name="txtEqF">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -613,7 +613,7 @@
       <property name="title">
        <string>points</string>
       </property>
-      <widget class="QLineEdit" name="txtLinPoiX1_2">
+      <widget class="QLineEdit" name="txtQuadPoiX1">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -623,7 +623,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtLinPoiX2_2">
+      <widget class="QLineEdit" name="txtQuadPoiX2">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -651,7 +651,7 @@
         <string>S1 (x1/y1)</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="butAddLinPoi_2">
+      <widget class="QPushButton" name="butAddQuadPoi">
        <property name="geometry">
         <rect>
          <x>320</x>
@@ -766,7 +766,7 @@
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtLinPoiY1_2">
+      <widget class="QLineEdit" name="txtQuadPoiY1">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -776,7 +776,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtLinPoiY2_2">
+      <widget class="QLineEdit" name="txtQuadPoiY2">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -807,7 +807,7 @@
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtLinPoiY2_3">
+      <widget class="QLineEdit" name="txtQuadPoiY3">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -838,7 +838,7 @@
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtLinPoiX2_3">
+      <widget class="QLineEdit" name="txtQuadPoiX3">
        <property name="geometry">
         <rect>
          <x>190</x>
