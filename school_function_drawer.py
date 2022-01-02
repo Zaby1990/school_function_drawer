@@ -6,51 +6,7 @@ from PyQt5 import QtWidgets, uic, QtGui
 import sys
 import os
 # import own Files
-from QuadPlot import *
-
-
-class LinearPlot:
-    counter = 0
-
-    def __init__(self, m=None, n=None, x1=None, y1=None, x2=None, y2=None):
-        self.__class__.counter += 1
-        self.x = np.arange(-5, 5, 0.1)
-        self.m = m
-        self.n = n
-        self.x1 = x1
-        self.y1 = y1
-        self.x2 = x2
-        self.y2 = y2
-        self.label = None
-
-        self.calculateY()
-
-
-    def setColor(self, color):
-        self.color = color
-
-    def calculateY(self):
-        if not((self.m is None) & (self.n is None)):
-            self.calculateWithEq()
-
-        if not((self.x1 is None) & (self.x2 is None) & (self.y1 is None) & (self.y2 is None)):
-            self.calculateWithPoints()
-
-        self.addLabel()
-    def calculateWithEq(self):
-        self.y = self.m * self.x + self.n
-
-    def calculateWithPoints(self):
-        self.m = (self.y2-self.y1)/(self.x2-self.x1)
-        self.n = self.y1 - self.m * self.x1
-
-        self.calculateWithEq()
-
-    def addLabel(self):
-        self.label = f'f{self.counter}(x) = {self.m:1.3f}x + {self.n:1.3f} '
-
-    # def addLabel(self):
-        # pass
+from functions import *
 
 # GUI
 class Ui_MainWindow(QtWidgets.QMainWindow):
